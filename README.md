@@ -1,5 +1,5 @@
 Yo! 
 
-listen > https://coderadio.freecodecamp.org/
+listen > https://coderadio.freecodecamp.org/, https://www.youtube.com/watch?v=jfKfPfyJRdk
 
-Also > https://www.youtube.com/watch?v=o-YBDTqX_ZU
+
