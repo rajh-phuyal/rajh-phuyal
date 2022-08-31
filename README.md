@@ -1,4 +1,4 @@
-Yo! 
+### Yo! 
 
 <div align="center">
   <img src="https://media.giphy.com/media/QZkpIdieotn3i/giphy.gif" width="500"/>
@@ -22,7 +22,7 @@ listen > https://coderadio.freecodecamp.org/  &  https://www.youtube.com/watch?v
 </div>
 
 
-### :fire: My Stats :
+### Code :
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=rajh-phuyal)](https://github.com/anuraghazra/github-readme-stats)
 
 
