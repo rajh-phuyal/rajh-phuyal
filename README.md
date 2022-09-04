@@ -7,7 +7,7 @@
 listen > https://coderadio.freecodecamp.org/  &  https://www.youtube.com/watch?v=jfKfPfyJRdk
 
 
-### :hammer_and_wrench: Tools in the Arsenal : 
+### :hammer_and_wrench: Tech Tools: 
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/django/django-plain.svg" title="Django" alt="django" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
