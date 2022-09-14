@@ -4,7 +4,7 @@
   <img src="https://media.giphy.com/media/QZkpIdieotn3i/giphy.gif" width="500"/>
 </div>
 
-listen > https://coderadio.freecodecamp.org/  &  https://www.youtube.com/watch?v=jfKfPfyJRdk
+listening > https://coderadio.freecodecamp.org/  &  https://www.youtube.com/watch?v=jfKfPfyJRdk
 
 
 ### :hammer_and_wrench: Tech Tools: 
