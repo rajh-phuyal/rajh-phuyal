@@ -1,7 +1,7 @@
 ### Yo! 
 
 <div align="center">
-  <img src="https://media.giphy.com/media/QZkpIdieotn3i/giphy.gif" width="500"/>
+  <img src="https://media.giphy.com/media/QZkpIdieotn3i/giphy.gif" width="400"/>
 </div>
 
 listening > https://coderadio.freecodecamp.org/  &  https://www.youtube.com/watch?v=jfKfPfyJRdk
