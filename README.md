@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://media1.giphy.com/media/Ll22OhMLAlVDb8UQWe/giphy.gif" style="border-radius: 20px;" width="400"/>
+  <img src="https://media1.giphy.com/media/Ll22OhMLAlVDb8UQWe/giphy.gif" width="200"/>
 </div>
 
 listening > https://coderadio.freecodecamp.org/  &  https://www.youtube.com/watch?v=jfKfPfyJRdk
