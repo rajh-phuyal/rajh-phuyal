@@ -19,5 +19,5 @@ listening > https://coderadio.freecodecamp.org/  &  https://www.youtube.com/watc
   <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" **alt="Git" width="40" height="40"/>
 </div>
 
-### : 42 Lisboa: 
+### : 42Lisboa: 
 [![rphuyal's 42 stats](https://badge42.vercel.app/api/v2/clacqh14n00210fiiwm78lmmv/stats?cursusId=21&coalitionId=110)](https://github.com/JaeSeoKim/badge42)
