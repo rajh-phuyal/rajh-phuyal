@@ -7,6 +7,7 @@ listening > https://coderadio.freecodecamp.org/  &  https://www.youtube.com/watc
 
 ### :hammer_and_wrench: Tech Tools: 
 <div>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" title="C" alt="C" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/django/django-plain.svg" title="Django" alt="django" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="python" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
@@ -18,3 +19,5 @@ listening > https://coderadio.freecodecamp.org/  &  https://www.youtube.com/watc
   <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" **alt="Git" width="40" height="40"/>
 </div>
 
+### :hammer_and_wrench: Tech Tools: 
+[![rphuyal's 42 stats](https://badge42.vercel.app/api/v2/clacqh14n00210fiiwm78lmmv/stats?cursusId=21&coalitionId=110)](https://github.com/JaeSeoKim/badge42)
