@@ -2,7 +2,6 @@
   <img src="https://media1.giphy.com/media/Ll22OhMLAlVDb8UQWe/giphy.gif" width="200"/>
 </div>
 
-listening > https://coderadio.freecodecamp.org/  &  https://www.youtube.com/watch?v=jfKfPfyJRdk
 
 
 ### :hammer_and_wrench: Tech Tools: 
