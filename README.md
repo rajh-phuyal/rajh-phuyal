@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://media1.giphy.com/media/Ll22OhMLAlVDb8UQWe/giphy.gif" width="200"/>
+  <img src="https://thumbs.gfycat.com/FatCarefreeAngwantibo-max-1mb.gif" width="250"/>
 </div>
 
 
