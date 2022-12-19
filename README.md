@@ -4,7 +4,7 @@
 
 
 
-### :hammer_and_wrench: Tech Tools: 
+## Tech Tools: 
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/django/django-plain.svg" title="Django" alt="django" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="python" width="40" height="40"/>&nbsp;
@@ -20,4 +20,5 @@
 
 </div>
 
+## 42 stat
 ![rphuyal's 42 stats](https://badge42.vercel.app/api/v2/clacqh14n00210fiiwm78lmmv/stats?cursusId=21&coalitionId=110)
