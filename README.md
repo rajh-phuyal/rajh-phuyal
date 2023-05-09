@@ -1,7 +1,6 @@
 <div align="center">
-  <img src="https://thumbs.gfycat.com/FatCarefreeAngwantibo-max-1mb.gif" width="250"/>
+  <img src="https://hackaday.com/wp-content/uploads/2020/07/spinning-donut-featured.gif" width="550"/>
 </div>
-
 
 
 ## Tech Tools: 
