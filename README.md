@@ -21,5 +21,5 @@
 
 </div>
 
-## 42 stat
+## @42
 ![rphuyal's 42 stats](https://badge42.vercel.app/api/v2/clacqh14n00210fiiwm78lmmv/stats?cursusId=21&coalitionId=110)
