@@ -1,7 +1,7 @@
 ##
-<div align="center">
+<!-- <div align="center">
   <img src="https://hackaday.com/wp-content/uploads/2020/07/spinning-donut-featured.gif" width="550"/>
-</div>
+</div> -->
 
 
 ##
