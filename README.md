@@ -1,10 +1,9 @@
-##
 <!-- <div align="center">
   <img src="https://hackaday.com/wp-content/uploads/2020/07/spinning-donut-featured.gif" width="550"/>
 </div> -->
 
 
-##
+
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="python" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/vuejs/vuejs-original.svg" title="Vue" alt="Vue" width="40" height="40"/>&nbsp;
@@ -18,8 +17,11 @@
   <img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-original.svg" title="Linux" alt="linux" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/bash/bash-plain.svg" title="bash" alt="bash" width="40" height="40"/>
   <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg" title="Git" alt="git" width="40" height="40"/>&nbsp;
-
 </div>
 
+
+
+<!--
 ## @42
 ![rphuyal's 42 stats](https://badge42.vercel.app/api/v2/clacqh14n00210fiiwm78lmmv/stats?cursusId=21&coalitionId=110)
+-->
