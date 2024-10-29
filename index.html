@@ -36,14 +36,19 @@
         }
 
         .intro h1 {
+            font-family: 'Courier New', Courier, monospace;
             font-size: 3em;
             margin-bottom: 0.2em;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(106, 255, 0, 0.8),
+                0 0 30px rgba(55, 255, 0, 0.5);
         }
 
         .intro p {
             font-size: 1.5em;
-            color: #aaa;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(106, 255, 0, 0.8),
+                0 0 30px rgba(55, 255, 0, 0.5);
         }
 
         /* Scroll Down Animation */
@@ -80,6 +85,7 @@
         /* Skills Section */
         .skills-section {
             padding: 60px 20px;
+            height: 100vh;
             background: rgba(0, 0, 0, 0.8);
         }
 
@@ -129,6 +135,7 @@
         /* Projects Section */
         .projects-section {
             padding: 60px 20px;
+            height: 100vh;
         }
 
         .projects-section h2 {
@@ -229,15 +236,15 @@
         }
     </style>
     <!-- Icons from Font Awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
     <!-- Intro Section -->
     <section id="intro" class="intro">
         <h1>👋 Hello, World!</h1>
-        <p>I'm a Full Stack Engineer and Computer Science student.</p>
-        <p>"I like to play chess"</p>
+        <p>I'm a Full Stack Engineer and Computer Science student <br>
+            aspiring to architect systems and experiences.</p>
         <!-- Scroll Down Animation -->
         <div class="scroll-down" onclick="scrollToSection('skills')" aria-label="Scroll down to skills section">
             <i class="fas fa-chevron-down"></i>
@@ -327,7 +334,7 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
-        <h2>🛠️ Projects</h2>
+        <h2>🛠️ Current Projects</h2>
         <div class="projects-container">
             <div class="project">
                 <h3>Transcendence (Final 42 Common Core Project)</h3>
@@ -340,15 +347,6 @@
         </div>
     </section>
 
-    <!-- GitHub Stats Section -->
-    <section id="github-stats" class="github-stats">
-        <h2>📈 GitHub Stats</h2>
-        <img src="https://github-readme-stats.vercel.app/api?username=rajh-phuyal&theme=dark&show_icons=true&count_private=true"
-            alt="GitHub Stats">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs?username=rajh-phuyal&show_icons=true&theme=dark&locale=en&layout=compact"
-            alt="Top Languages">
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <h2>🤝 Connect</h2>
@@ -357,6 +355,8 @@
                     class="fab fa-linkedin"></i></a>
             <a href="https://x.com/rajh_phuyal" target="_blank" aria-label="Twitter"><i
                     class="fab fa-twitter-square"></i></a>
+            <a href="https://github.com/rajh-phuyal" target="_blank" aria-label="GitHub"><i
+                    class="fab fa-github-square"></i></a>
         </div>
     </section>
 
