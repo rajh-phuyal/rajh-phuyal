@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         /* Space background */
@@ -35,6 +36,50 @@
             position: relative;
         }
 
+        /* Wave Emoji Animation */
+        .wave-emoji {
+            display: inline-block;
+            margin-right: 15px;
+            animation: wave 2s infinite ease-in-out;
+            transform-origin: 70% 70%;
+            /* Adjust origin to make it look more natural */
+        }
+
+        @keyframes wave {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            10% {
+                transform: rotate(14deg);
+            }
+
+            20% {
+                transform: rotate(-8deg);
+            }
+
+            30% {
+                transform: rotate(14deg);
+            }
+
+            40% {
+                transform: rotate(-4deg);
+            }
+
+            50% {
+                transform: rotate(10deg);
+            }
+
+            60% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+
         .intro h1 {
             font-family: 'Courier New', Courier, monospace;
             font-size: 3em;
@@ -49,6 +94,13 @@
             color: #ffffff;
             text-shadow: 0 0 20px rgba(106, 255, 0, 0.8),
                 0 0 30px rgba(55, 255, 0, 0.5);
+        }
+
+        .scroll-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.5em !important;
+            color: white;
+            text-shadow: none !important;
         }
 
         /* Scroll Down Animation */
@@ -82,11 +134,23 @@
             }
         }
 
+        #glass-wrapper {
+            color: #f0f1ff;
+            backdrop-filter: blur(10px);
+            background: rgba(15, 25, 45, 0.5);
+        }
+
         /* Skills Section */
         .skills-section {
-            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: #f0f1ff;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            background: rgba(15, 25, 45, 0.5);
         }
 
         .skills-section h2 {
@@ -97,45 +161,158 @@
         }
 
         .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .skill-card {
-            background: rgba(255, 255, 255, 0.1);
-            width: 120px;
-            height: 120px;
-            border-radius: 10px;
+        @media screen and (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            /* scrollable on small screens */
+            .skills-section {
+                overflow-y: auto;
+            }
+
+            .skills-section h2 {
+                font-size: 2em;
+            }
+
+            .category-box {
+                padding: 15px;
+            }
+        }
+
+        /* Category Box */
+        .category-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: #ffffff;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .category-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Category Title */
+        .category-box h3 {
+            font-size: 1.4em;
+            width: 100%;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Skill Card */
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            width: 100px;
+            height: 100px;
+            border-radius: 12px;
             text-align: center;
             padding: 10px;
-            transition: transform 0.3s, background 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
         .skill-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
 
         .skill-card img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 10px;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 8px;
         }
 
         .skill-card span {
-            display: block;
-            font-size: 1em;
+            color: #ffffff;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        /* Card Content for Expanded View */
+        .card-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            color: #f0f0f0;
+            padding: 20px;
+            border-radius: 15px;
+            z-index: 10;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            display: none;
+        }
+
+        /* hide scroll bar */
+        .card-content::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* also from firefox */
+        .card-content {
+            scrollbar-width: none;
+        }
+
+        .card-content h4 {
+            margin-top: 0;
+            font-size: 1.4em;
+            color: #00e1ff;
+        }
+
+        .card-content p {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        /* Close Button Styling */
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
             color: #fff;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
         }
 
         /* Projects Section */
         .projects-section {
-            padding: 60px 20px;
-            height: 100vh;
+            padding: 60px 20px 0px 20px;
+            height: auto;
         }
 
         .projects-section h2 {
@@ -163,24 +340,6 @@
 
         .project p {
             color: #ccc;
-        }
-
-        /* GitHub Stats Section */
-        .github-stats {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        .github-stats h2 {
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        }
-
-        .github-stats img {
-            max-width: 100%;
-            margin-bottom: 20px;
         }
 
         /* Contact Section */
@@ -211,6 +370,12 @@
             color: #00ccff;
         }
 
+        #connect-divider {
+            margin: 20px auto 20px auto;
+            width: 80%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -235,130 +400,255 @@
             }
         }
     </style>
-    <!-- Icons from Font Awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <!-- Intro Section -->
+    <!-- Intro -->
     <section id="intro" class="intro">
-        <h1>👋 Hello, World!</h1>
-        <p>I'm a Full Stack Engineer and Computer Science student <br>
+        <h1><span class="wave-emoji">👋</span>Hello, World!</h1>
+        <p>I'm a Full Stack Engineer and Computer Science student, <br>
             aspiring to architect systems and experiences.</p>
+
         <!-- Scroll Down Animation -->
         <div class="scroll-down" onclick="scrollToSection('skills')" aria-label="Scroll down to skills section">
+            <p class="scroll-text">Skills</p>
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <h2>🚀 Skills</h2>
-        <div class="skills-container">
-            <!-- Languages -->
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python">
-                <span>Python</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/c-programming.png" alt="C">
-                <span>C</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" alt="C++">
-                <span>C++</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript">
-                <span>JavaScript</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/bash.png" alt="Bash">
-                <span>Bash</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/sql.png" alt="SQL">
-                <span>SQL</span>
-            </div>
-            <!-- Front-End -->
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML5">
-                <span>HTML5</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3">
-                <span>CSS3</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/vue-js.png" alt="Vue.js">
-                <span>Vue.js</span>
-            </div>
-            <!-- Back-End -->
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django">
-                <span>Django</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.icons8.com/fluency/48/000000/mysql-logo.png" alt="MySQL">
-                <span>MySQL</span>
-            </div>
-            <!-- Cloud Hosting -->
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/amazon-web-services.png" alt="AWS">
-                <span>AWS</span>
-            </div>
-            <!-- Software and Tools -->
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git">
-                <span>Git</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub">
-                <span>GitHub</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/48/000000/linux--v1.png" alt="Linux">
-                <span>Linux</span>
-            </div>
-            <!-- Extras -->
-            <div class="skill-card">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/console.png" alt="Terminal">
-                <span>Terminal</span>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/markdown.png" alt="Markdown">
-                <span>Markdown</span>
-            </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <h2>🛠️ Current Projects</h2>
-        <div class="projects-container">
-            <div class="project">
-                <h3>Transcendence (Final 42 Common Core Project)</h3>
-                <p>Architecting and leading the development.</p>
-            </div>
-            <div class="project">
-                <h3>Inception</h3>
-                <p>Learning about Docker containers.</p>
-            </div>
-        </div>
-    </section>
+    <div id="glass-wrapper">
+        <!-- Skills -->
+        <section id="skills" class="skills-section">
+            <h2 style="margin-bottom: 20px">⚙️ Skills</h2>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2>🤝 Connect</h2>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/rajh-phuyal/" target="_blank" aria-label="LinkedIn"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="https://x.com/rajh_phuyal" target="_blank" aria-label="Twitter"><i
-                    class="fab fa-twitter-square"></i></a>
-            <a href="https://github.com/rajh-phuyal" target="_blank" aria-label="GitHub"><i
-                    class="fab fa-github-square"></i></a>
-        </div>
-    </section>
+            <div class="skills-container">
+
+                <!-- Category Box: Languages -->
+                <div class="category-box">
+                    <h3>Languages</h3>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python">
+                        <span>Python</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>Python</h4>
+                            <p>Proficiency: 80%</p>
+                            <p>Projects: Data Analysis Tool, Web Scraper</p>
+                            <p>Lessons: Data Structures, OOP Concepts</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript">
+                        <span>JavaScript</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>JavaScript</h4>
+                            <p>Proficiency: 70%</p>
+                            <p>Projects: Interactive Website, Single Page Application</p>
+                            <p>Lessons: DOM Manipulation, Async Programming</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/c-programming.png" alt="C">
+                        <span>C</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>C</h4>
+                            <p>Proficiency: 65%</p>
+                            <p>Projects: Embedded Systems, Operating Systems</p>
+                            <p>Lessons: Memory Management, Pointers</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                    <!-- Add more skill cards as needed -->
+                </div>
+
+                <!-- Category Box: Front-End Development -->
+                <div class="category-box">
+                    <h3>Front-End Development</h3>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML5">
+                        <span>HTML5</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>HTML5</h4>
+                            <p>Proficiency: 85%</p>
+                            <p>Projects: Responsive Websites, Landing Pages</p>
+                            <p>Lessons: Semantic HTML, Accessibility</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3">
+                        <span>CSS3</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>CSS3</h4>
+                            <p>Proficiency: 75%</p>
+                            <p>Projects: Custom Themes, Animations</p>
+                            <p>Lessons: Flexbox, Grid, Responsive Design</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/vue-js.png" alt="Vue">
+                        <span>Vue.js</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>Vue.js</h4>
+                            <p>Proficiency: 60%</p>
+                            <p>Projects: Dynamic Interfaces, SPA</p>
+                            <p>Lessons: Vuex, Vue Router, Component Architecture</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Box: Back-End Development -->
+                <div class="category-box">
+                    <h3>Back-End Development</h3>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django">
+                        <span>Django</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>Django</h4>
+                            <p>Proficiency: 75%</p>
+                            <p>Projects: E-commerce Platform, REST API</p>
+                            <p>Lessons: Models, Views, Django ORM</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL">
+                        <span>MySQL</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>MySQL</h4>
+                            <p>Proficiency: 70%</p>
+                            <p>Projects: Database Management, Analytics</p>
+                            <p>Lessons: Joins, Indexing, Transactions</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Box: Cloud Hosting -->
+                <div class="category-box">
+                    <h3>Cloud Hosting</h3>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/amazon-web-services.png" alt="AWS">
+                        <span>AWS</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>AWS</h4>
+                            <p>Proficiency: 50%</p>
+                            <p>Projects: Serverless Applications, Cloud Storage</p>
+                            <p>Lessons: EC2, S3, Lambda</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Box: Software and Tools -->
+                <div class="category-box">
+                    <h3>Software and Tools</h3>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git">
+                        <span>Git</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>Git</h4>
+                            <p>Proficiency: 85%</p>
+                            <p>Projects: Version Control, Collaboration</p>
+                            <p>Lessons: Branching, Merging, Pull Requests</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/github.png" alt="GitHub">
+                        <span>GitHub</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>GitHub</h4>
+                            <p>Proficiency: 80%</p>
+                            <p>Projects: Open Source Contributions, Project Management</p>
+                            <p>Lessons: Repositories, Issues, Actions</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/color/48/000000/linux.png" alt="Linux">
+                        <span>Linux</span>
+                        <div class="card-content">
+                            <button class="close-button">✕</button>
+                            <h4>Linux</h4>
+                            <p>Proficiency: 70%</p>
+                            <p>Projects: Server Management, Scripting</p>
+                            <p>Lessons: Shell Scripting, File Permissions, Networking</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                                vestibulum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-down" onclick="scrollToSection('projects')" aria-label="Scroll down to projects section">
+                <p class="scroll-text" style="margin-left: 10px;">Projects</p>
+                <i class="fas fa-chevron-down" style="margin-left: 1em;"></i>
+            </div>
+        </section>
+
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2>🛠️ Current Projects</h2>
+
+            <div class="projects-container">
+                <div class="project">
+                    <h3>Transcendence (Final 42 Common Core Project)</h3>
+                    <p>Architecting and leading the development.</p>
+                </div>
+                <div class="project">
+                    <h3>Inception</h3>
+                    <p>Learning about Docker containers.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr id="connect-divider">
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2>🤝 Connect</h2>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/rajh-phuyal/" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/rajh_phuyal" target="_blank" aria-label="Twitter"><i
+                        class="fab fa-twitter-square"></i></a>
+                <a href="https://github.com/rajh-phuyal" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github-square"></i></a>
+            </div>
+        </section>
+
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -371,6 +661,33 @@
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
         }
     </script>
+
+    <!-- <script>
+        $(document).ready(function () {
+            $('.skill-card').click(function () {
+                if ($(this).hasClass('active')) {
+                    // Collapse if already active
+                    $(this).removeClass('active');
+                    $(this).find('.card-content').fadeOut(300);
+                } else {
+                    // Close any other open cards first
+                    $('.skill-card').removeClass('active');
+                    $('.card-content').hide();
+
+                    $(this).addClass('active');
+                    $(this).find('.card-content').fadeIn(300); // Show expanded content smoothly
+                }
+            });
+
+            // Close button inside the card content
+            $('.close-button').click(function (event) {
+                event.stopPropagation();
+
+                $(this).closest('.skill-card').removeClass('active');
+                $(this).closest('.card-content').fadeOut(300);
+            });
+        });
+    </script> -->
 </body>
 
 </html>
