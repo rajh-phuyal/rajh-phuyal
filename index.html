@@ -147,10 +147,7 @@
             align-items: center;
             padding: 40px 20px;
             color: #f0f1ff;
-            height: 100vh;
             overflow: hidden;
-            backdrop-filter: blur(10px);
-            background: rgba(15, 25, 45, 0.5);
         }
 
         .skills-section h2 {
@@ -312,6 +309,7 @@
         /* Projects Section */
         .projects-section {
             padding: 60px 20px 0px 20px;
+            margin-bottom: 100px;
             height: auto;
         }
 
@@ -370,7 +368,7 @@
             color: #00ccff;
         }
 
-        #connect-divider {
+        .sections-divider {
             margin: 20px auto 20px auto;
             width: 80%;
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -609,13 +607,9 @@
                     </div>
                 </div>
             </div>
-
-            <div class="scroll-down" onclick="scrollToSection('projects')" aria-label="Scroll down to projects section">
-                <p class="scroll-text" style="margin-left: 10px;">Projects</p>
-                <i class="fas fa-chevron-down" style="margin-left: 1em;"></i>
-            </div>
         </section>
 
+        <hr class="sections-divider">
 
         <!-- Projects Section -->
         <section id="projects" class="projects-section">
@@ -633,7 +627,7 @@
             </div>
         </section>
 
-        <hr id="connect-divider">
+        <hr class="sections-divider">
 
         <!-- Contact Section -->
         <section id="contact" class="contact-section">
