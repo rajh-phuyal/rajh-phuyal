@@ -662,3 +662,33 @@ footer p {
         height: 40px;
     }
 }
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Style for navigation buttons (up and down scroll indicators) */
+.scroll-up, .scroll-down {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+}
+
+.scroll-up {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-down {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}

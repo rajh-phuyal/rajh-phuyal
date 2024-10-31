@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.js"></script>
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -22,300 +24,63 @@
 </script>
 
 <body>
-    <!-- Intro -->
-    <div class="glass-wrapper">
-
-        <section id="random" class="initial-hidden">
-            <h1>Hidden Section</h1>
-        </section>
-
-        <section id="writings" class="initial-hidden">
-            <h1>Hidden Section</h1>
-        </section>
-
-        <section id="experiences" class="initial-hidden">
-            <h1>Hidden Section</h1>
-        </section>
-    </div>
-
-    <section id="intro" class="intro">
-        <div class="rotating-earth"></div>
-
-        <div id="navigations-above">
-            <!-- Scroll Down Animation -->
-            <div class="scroll-up" onclick="scrollToSectionAbove('random')" aria-label="Scroll up to random section">
-                <i class="fas fa-chevron-up"></i>
-                <p class="scroll-text">random</p>
-            </div>
-            <div class="scroll-up" onclick="scrollToSectionAbove('writings')" aria-label="Scroll up to writings section">
-                <i class="fas fa-chevron-up"></i>
-                <p class="scroll-text">writings</p>
-            </div>
-            <div class="scroll-up" onclick="scrollToSectionAbove('experiences')" aria-label="Scroll up to experiences section">
-                <i class="fas fa-chevron-up"></i>
-                <p class="scroll-text">experiences</p>
-            </div>
-        </div>
-
-
-        <h1><span class="wave-emoji">👋</span>Hello, World!</h1>
-        <p>I'm a Full Stack Engineer and Computer Science student, <br>
-            aspiring to architect systems and experiences.</p>
-
-        <div class="under-construction">
-            🚧 Under Construction 🚧
-        </div>
-
-        <div id="navigations">
-            <!-- Scroll Down Animation -->
-            <div class="scroll-down" onclick="scrollToSection('projects')" aria-label="Scroll down to projects section">
-                <p class="scroll-text">Projects</p>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-
-            <div class="scroll-down" onclick="scrollToSection('skills')" aria-label="Scroll down to skills section">
-                <p class="scroll-text">Skills</p>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-
-            <div class="scroll-down" onclick="scrollToSection('contact')" aria-label="Scroll down to contact section">
-                <p class="scroll-text">Contact</p>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-    </section>
-
-
-    <div class="glass-wrapper">
-        <!-- Skills -->
-        <section id="skills" class="skills-section">
-            <h2 style="margin-bottom: 20px">⚙️ Skills</h2>
-
-            <div class="skills-container">
-
-                <!-- Category Box: Languages -->
-                <div class="category-box">
-                    <h3>Languages</h3>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python">
-                        <span>Python</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>Python</h4>
-                            <p>Proficiency: 80%</p>
-                            <p>Projects: Data Analysis Tool, Web Scraper</p>
-                            <p>Lessons: Data Structures, OOP Concepts</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript">
-                        <span>JavaScript</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>JavaScript</h4>
-                            <p>Proficiency: 70%</p>
-                            <p>Projects: Interactive Website, Single Page Application</p>
-                            <p>Lessons: DOM Manipulation, Async Programming</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/c-programming.png" alt="C">
-                        <span>C</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>C</h4>
-                            <p>Proficiency: 65%</p>
-                            <p>Projects: Embedded Systems, Operating Systems</p>
-                            <p>Lessons: Memory Management, Pointers</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
-                    <!-- Add more skill cards as needed -->
+    <!-- Intro Section Wrapper -->
+    <div id="fullpage">
+        <!-- Intro Section -->
+        <section class="section" id="intro">
+            <div class="rotating-earth"></div>
+            <div id="navigations-above">
+                <div class="scroll-up" aria-label="Scroll up">
+                    <i class="fas fa-chevron-up"></i>
+                    <p class="scroll-text">Up</p>
                 </div>
+            </div>
 
-                <!-- Category Box: Front-End Development -->
-                <div class="category-box">
-                    <h3>Front-End Development</h3>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML5">
-                        <span>HTML5</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>HTML5</h4>
-                            <p>Proficiency: 85%</p>
-                            <p>Projects: Responsive Websites, Landing Pages</p>
-                            <p>Lessons: Semantic HTML, Accessibility</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3">
-                        <span>CSS3</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>CSS3</h4>
-                            <p>Proficiency: 75%</p>
-                            <p>Projects: Custom Themes, Animations</p>
-                            <p>Lessons: Flexbox, Grid, Responsive Design</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/vue-js.png" alt="Vue">
-                        <span>Vue.js</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>Vue.js</h4>
-                            <p>Proficiency: 60%</p>
-                            <p>Projects: Dynamic Interfaces, SPA</p>
-                            <p>Lessons: Vuex, Vue Router, Component Architecture</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
-                </div>
+            <h1><span class="wave-emoji">👋</span>Hello, World!</h1>
+            <p>I'm a Full Stack Engineer and Computer Science student, aspiring to architect systems and experiences.</p>
 
-                <!-- Category Box: Back-End Development -->
-                <div class="category-box">
-                    <h3>Back-End Development</h3>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django">
-                        <span>Django</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>Django</h4>
-                            <p>Proficiency: 75%</p>
-                            <p>Projects: E-commerce Platform, REST API</p>
-                            <p>Lessons: Models, Views, Django ORM</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL">
-                        <span>MySQL</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>MySQL</h4>
-                            <p>Proficiency: 70%</p>
-                            <p>Projects: Database Management, Analytics</p>
-                            <p>Lessons: Joins, Indexing, Transactions</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="under-construction">
+                🚧 Under Construction 🚧
+            </div>
 
-                <!-- Category Box: Cloud Hosting -->
-                <div class="category-box">
-                    <h3>Cloud Hosting</h3>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/amazon-web-services.png" alt="AWS">
-                        <span>AWS</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>AWS</h4>
-                            <p>Proficiency: 50%</p>
-                            <p>Projects: Serverless Applications, Cloud Storage</p>
-                            <p>Lessons: EC2, S3, Lambda</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category Box: Software and Tools -->
-                <div class="category-box">
-                    <h3>Software and Tools</h3>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git">
-                        <span>Git</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>Git</h4>
-                            <p>Proficiency: 85%</p>
-                            <p>Projects: Version Control, Collaboration</p>
-                            <p>Lessons: Branching, Merging, Pull Requests</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/github.png" alt="GitHub">
-                        <span>GitHub</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>GitHub</h4>
-                            <p>Proficiency: 80%</p>
-                            <p>Projects: Open Source Contributions, Project Management</p>
-                            <p>Lessons: Repositories, Issues, Actions</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <img src="https://img.icons8.com/color/48/000000/linux.png" alt="Linux">
-                        <span>Linux</span>
-                        <div class="card-content">
-                            <button class="close-button">✕</button>
-                            <h4>Linux</h4>
-                            <p>Proficiency: 70%</p>
-                            <p>Projects: Server Management, Scripting</p>
-                            <p>Lessons: Shell Scripting, File Permissions, Networking</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-                                vestibulum.</p>
-                        </div>
-                    </div>
+            <div id="navigations">
+                <div class="scroll-down" aria-label="Scroll down">
+                    <p class="scroll-text">Scroll Down</p>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </section>
 
-        <hr class="sections-divider">
+        <!-- Hidden Sections -->
+        <section class="section" id="random">
+            <h1>Hidden Section - Random</h1>
+        </section>
+
+        <section class="section" id="writings">
+            <h1>Hidden Section - Writings</h1>
+        </section>
+
+        <section class="section" id="experiences">
+            <h1>Hidden Section - Experiences</h1>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <h2>⚙️ Skills</h2>
+            <!-- Skills content here -->
+        </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="projects-section">
+        <section class="section" id="projects">
             <h2>🛠️ Current Projects</h2>
-
-            <div class="projects-container">
-                <div class="project">
-                    <h3>Transcendence (Final 42 Common Core Project)</h3>
-                    <p>Architecting and leading the development.</p>
-                </div>
-                <div class="project">
-                    <h3>Inception</h3>
-                    <p>Learning about Docker containers.</p>
-                </div>
-            </div>
+            <!-- Projects content here -->
         </section>
-
-        <hr class="sections-divider">
 
         <!-- Contact Section -->
-        <section id="contact" class="contact-section">
+        <section class="section" id="contact">
             <h2>🤝 Connect</h2>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/rajh-phuyal/" target="_blank" aria-label="LinkedIn"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/rajh_phuyal" target="_blank" aria-label="Twitter"><i
-                        class="fab fa-twitter-square"></i></a>
-                <a href="https://github.com/rajh-phuyal" target="_blank" aria-label="GitHub"><i
-                        class="fab fa-github-square"></i></a>
-            </div>
+            <!-- Contact content here -->
         </section>
-    </div>
-
-    <div id="skill-modal" class="skill-modal">
-        <div class="skill-modal-content">
-            <button class="close-button">✕</button>
-            <!-- Expanded content will be injected here -->
-        </div>
     </div>
 
     <!-- Footer -->
@@ -326,5 +91,4 @@
     <!-- Scripts -->
     <script src="./js/main.js"></script>
 </body>
-
 </html>

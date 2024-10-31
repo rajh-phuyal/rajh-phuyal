@@ -13,8 +13,32 @@ $(window).on('load', function () {
     $('#random, #writings, #experiences').removeClass('initial-hidden').addClass('visible')
 });
 
+function setUpFullPage() {
+    new fullpage('#fullpage', {
+        // FullPage.js settings
+        autoScrolling: true,
+        navigation: true,
+        scrollHorizontally: true,
+        continuousVertical: true,  // Enables infinite scrolling
+        anchors: ['intro', 'random', 'writings', 'experiences', 'skills', 'projects', 'contact'],
+        navigationPosition: 'right',
+        navigationTooltips: ['Intro', 'Random', 'Writings', 'Experiences', 'Skills', 'Projects', 'Contact'],
+        showActiveTooltip: true,
+
+        // Scrolling effects
+        scrollingSpeed: 800,
+
+        // Event listeners
+        afterLoad: function (origin, destination, direction) {
+            console.log("Section loaded: " + destination.anchor);
+        }
+    });
+}
 
 $(document).ready(function () {
+    // Set up fullpage.js
+    setUpFullPage();
+    
     // Set up click events for each scroll-up button
     $('.scroll-up').on('click', function () {
         // Get the section ID from the scroll button's onclick attribute
