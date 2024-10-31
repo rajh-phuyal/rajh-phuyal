@@ -6,399 +6,7 @@
     <title>Rajh Phuyal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://avatars.githubusercontent.com/u/81531002?s=400&v=4">
-    <!-- Add any meta keywords and description if needed -->
-    <style>
-        /* Basic reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        /* Space background */
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #000 url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            overflow-x: hidden;
-        }
-
-        /* Intro Section */
-        .intro {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            position: relative;
-        }
-
-        /* Wave Emoji Animation */
-        .wave-emoji {
-            display: inline-block;
-            margin-right: 15px;
-            animation: wave 2s infinite ease-in-out;
-            transform-origin: 70% 70%;
-            /* Adjust origin to make it look more natural */
-        }
-
-        @keyframes wave {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            10% {
-                transform: rotate(14deg);
-            }
-
-            20% {
-                transform: rotate(-8deg);
-            }
-
-            30% {
-                transform: rotate(14deg);
-            }
-
-            40% {
-                transform: rotate(-4deg);
-            }
-
-            50% {
-                transform: rotate(10deg);
-            }
-
-            60% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(0deg);
-            }
-        }
-
-
-        .intro h1 {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 3em;
-            margin-bottom: 0.2em;
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(106, 255, 0, 0.8),
-                0 0 30px rgba(55, 255, 0, 0.5);
-        }
-
-        .intro p {
-            font-size: 1.5em;
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(106, 255, 0, 0.8),
-                0 0 30px rgba(55, 255, 0, 0.5);
-        }
-
-        .scroll-text {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.5em !important;
-            color: white;
-            text-shadow: none !important;
-        }
-
-        /* Scroll Down Animation */
-        .scroll-down {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2em;
-            color: #fff;
-            animation: bounce 2s infinite;
-            cursor: pointer;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translate(-50%, 0);
-            }
-
-            40% {
-                transform: translate(-50%, -15px);
-            }
-
-            60% {
-                transform: translate(-50%, -7px);
-            }
-        }
-
-        #glass-wrapper {
-            color: #f0f1ff;
-            backdrop-filter: blur(10px);
-            background: rgba(15, 25, 45, 0.5);
-        }
-
-        /* Skills Section */
-        .skills-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            color: #f0f1ff;
-            overflow: hidden;
-        }
-
-        .skills-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        @media screen and (max-width: 768px) {
-            .skills-container {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-
-            /* scrollable on small screens */
-            .skills-section {
-                overflow-y: auto;
-            }
-
-            .skills-section h2 {
-                font-size: 2em;
-            }
-
-            .category-box {
-                padding: 15px;
-            }
-        }
-
-        /* Category Box */
-        .category-box {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            color: #ffffff;
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
-        }
-
-        .category-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Category Title */
-        .category-box h3 {
-            font-size: 1.4em;
-            width: 100%;
-            margin-bottom: 15px;
-            color: #e0e0e0;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        /* Skill Card */
-        .skill-card {
-            background: rgba(255, 255, 255, 0.1);
-            width: 100px;
-            height: 100px;
-            border-radius: 12px;
-            text-align: center;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .skill-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        .skill-card img {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 8px;
-        }
-
-        .skill-card span {
-            color: #ffffff;
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-
-        /* Card Content for Expanded View */
-        .card-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            color: #f0f0f0;
-            padding: 20px;
-            border-radius: 15px;
-            z-index: 10;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: left;
-            display: none;
-        }
-
-        /* hide scroll bar */
-        .card-content::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* also from firefox */
-        .card-content {
-            scrollbar-width: none;
-        }
-
-        .card-content h4 {
-            margin-top: 0;
-            font-size: 1.4em;
-            color: #00e1ff;
-        }
-
-        .card-content p {
-            font-size: 0.9em;
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
-
-        /* Close Button Styling */
-        .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: transparent;
-            color: #fff;
-            border: none;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        /* Projects Section */
-        .projects-section {
-            padding: 60px 20px 0px 20px;
-            margin-bottom: 100px;
-            height: auto;
-        }
-
-        .projects-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        }
-
-        .projects-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .project {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-
-        .project h3 {
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            color: #ccc;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 60px 20px;
-        }
-
-        .contact-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        }
-
-        .social-icons {
-            text-align: center;
-        }
-
-        .social-icons a {
-            margin: 0 15px;
-            display: inline-block;
-            color: #fff;
-            font-size: 2em;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #00ccff;
-        }
-
-        .sections-divider {
-            margin: 20px auto 20px auto;
-            width: 80%;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        footer p {
-            color: #aaa;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .skill-card {
-                width: 100px;
-                height: 100px;
-            }
-
-            .skill-card img {
-                width: 40px;
-                height: 40px;
-            }
-        }
-    </style>
-
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -415,20 +23,70 @@
 
 <body>
     <!-- Intro -->
+    <div class="glass-wrapper">
+
+        <section id="random" class="initial-hidden">
+            <h1>Hidden Section</h1>
+        </section>
+
+        <section id="writings" class="initial-hidden">
+            <h1>Hidden Section</h1>
+        </section>
+
+        <section id="experiences" class="initial-hidden">
+            <h1>Hidden Section</h1>
+        </section>
+    </div>
+
     <section id="intro" class="intro">
+        <div class="rotating-earth"></div>
+
+        <div id="navigations-above">
+            <!-- Scroll Down Animation -->
+            <div class="scroll-up" onclick="scrollToSectionAbove('random')" aria-label="Scroll up to random section">
+                <i class="fas fa-chevron-up"></i>
+                <p class="scroll-text">random</p>
+            </div>
+            <div class="scroll-up" onclick="scrollToSectionAbove('writings')" aria-label="Scroll up to writings section">
+                <i class="fas fa-chevron-up"></i>
+                <p class="scroll-text">writings</p>
+            </div>
+            <div class="scroll-up" onclick="scrollToSectionAbove('experiences')" aria-label="Scroll up to experiences section">
+                <i class="fas fa-chevron-up"></i>
+                <p class="scroll-text">experiences</p>
+            </div>
+        </div>
+
+
         <h1><span class="wave-emoji">👋</span>Hello, World!</h1>
         <p>I'm a Full Stack Engineer and Computer Science student, <br>
             aspiring to architect systems and experiences.</p>
 
-        <!-- Scroll Down Animation -->
-        <div class="scroll-down" onclick="scrollToSection('skills')" aria-label="Scroll down to skills section">
-            <p class="scroll-text">Skills</p>
-            <i class="fas fa-chevron-down"></i>
+        <div class="under-construction">
+            🚧 Under Construction 🚧
+        </div>
+
+        <div id="navigations">
+            <!-- Scroll Down Animation -->
+            <div class="scroll-down" onclick="scrollToSection('projects')" aria-label="Scroll down to projects section">
+                <p class="scroll-text">Projects</p>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <div class="scroll-down" onclick="scrollToSection('skills')" aria-label="Scroll down to skills section">
+                <p class="scroll-text">Skills</p>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <div class="scroll-down" onclick="scrollToSection('contact')" aria-label="Scroll down to contact section">
+                <p class="scroll-text">Contact</p>
+                <i class="fas fa-chevron-down"></i>
+            </div>
         </div>
     </section>
 
 
-    <div id="glass-wrapper">
+    <div class="glass-wrapper">
         <!-- Skills -->
         <section id="skills" class="skills-section">
             <h2 style="margin-bottom: 20px">⚙️ Skills</h2>
@@ -651,7 +309,13 @@
                         class="fab fa-github-square"></i></a>
             </div>
         </section>
+    </div>
 
+    <div id="skill-modal" class="skill-modal">
+        <div class="skill-modal-content">
+            <button class="close-button">✕</button>
+            <!-- Expanded content will be injected here -->
+        </div>
     </div>
 
     <!-- Footer -->
@@ -659,39 +323,8 @@
         <p>&copy; 2023 <strong>Rajh Phuyal</strong>. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Smooth Scrolling -->
-    <script>
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
-
-    <!-- <script>
-        $(document).ready(function () {
-            $('.skill-card').click(function () {
-                if ($(this).hasClass('active')) {
-                    // Collapse if already active
-                    $(this).removeClass('active');
-                    $(this).find('.card-content').fadeOut(300);
-                } else {
-                    // Close any other open cards first
-                    $('.skill-card').removeClass('active');
-                    $('.card-content').hide();
-
-                    $(this).addClass('active');
-                    $(this).find('.card-content').fadeIn(300); // Show expanded content smoothly
-                }
-            });
-
-            // Close button inside the card content
-            $('.close-button').click(function (event) {
-                event.stopPropagation();
-
-                $(this).closest('.skill-card').removeClass('active');
-                $(this).closest('.card-content').fadeOut(300);
-            });
-        });
-    </script> -->
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
