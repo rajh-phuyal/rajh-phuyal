@@ -13,32 +13,6 @@ body {
     background-size: cover;
     color: #fff;
     overflow-x: hidden;
-    width: 100vw !important;
-}
-
-#random,
-#writings,
-#experiences {
-    position: absolute;
-    top: 0;
-    width: 100vh;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
-    padding-top: 50px;
-}
-
-#random {
-    top: -100vh;
-}
-
-#writings {
-    top: -200vh;
-}
-
-#experiences {
-    top: -300vh;
 }
 
 .initial-hidden {
@@ -49,17 +23,75 @@ body {
     display: block;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+#random,
+#writings,
+#experiences {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 20px 0px 20px;
+}
+
+/* Ensure header is at the bottom */
+.mirrored-section h2 {
+    margin: 1.5em 0;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Content sits above the header */
+.mirrored-section .content {
+    margin-top: auto;
+    padding: 6em 0; /* offset the arrow */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Position scroll-up button at the bottom */
+.mirrored-section .scroll-up {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    font-size: 2em;
+    color: #fff;
+    animation: bounce-up 2s infinite;
+    cursor: pointer;
+}
+
+.mirrored-section .scroll-up-end {
+    margin-top: 20px;
+    animation: bounce 2s infinite;
+}
+
+
+@keyframes bounce-up {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translate(-50%, 0);
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    40% {
+        transform: translate(-50%, 15px);
+    }
+
+    60% {
+        transform: translate(-50%, 7px);
     }
 }
+
 
 
 /* Intro Section */
@@ -179,7 +211,7 @@ body {
 }
 
 /* Scroll Down Animation */
-.scroll-up {
+.scroll-up-main {
     font-size: 2em;
     color: #fff;
     animation: bounce-up 2s infinite;
@@ -244,6 +276,11 @@ body {
     left: 50%;
 }
 
+.scroll-down-end {
+    margin-bottom: 2em;
+    animation: bounce-up 2s infinite;
+}
+
 @keyframes bounce {
 
     0%,
@@ -272,7 +309,6 @@ body {
 /* Projects Section */
 .projects-section {
     padding: 60px 20px 0px 20px;
-    margin-bottom: 100px;
     height: 100vh;
     position: relative;
 }
@@ -619,6 +655,7 @@ body.modal-open {
 /* Connect Section */
 .connect-section {
     padding: 60px 20px;
+    height: 100vh;
 }
 
 .connect-section h2 {

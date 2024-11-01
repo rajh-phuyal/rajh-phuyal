@@ -1,8 +1,8 @@
-function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-}
+// function scrollToSection(sectionId) {
+//     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+// }
 
-function scrollToSectionAbove(sectionId) {
+function scrollToSection(sectionId) {
     $('html, body').animate({
         scrollTop: $('#' + sectionId).offset().top
     }, 800);
@@ -15,16 +15,6 @@ $(window).on('load', function () {
 
 
 $(document).ready(function () {
-    // Set up click events for each scroll-up button
-    $('.scroll-up').on('click', function () {
-        // Get the section ID from the scroll button's onclick attribute
-        const sectionId = $(this).attr('onclick').match(/'([^']+)'/)[1];
-        // Remove 'initial-hidden' class from the section to make it visible
-        $('#' + sectionId).removeClass('initial-hidden').addClass('visible');
-        // Now scroll to the section
-        scrollToSectionAbove(sectionId);
-    });
-
     let $skillCards = $('.skill-card');
     let $body = $('body');
     let $skillModal = $('#skill-modal');

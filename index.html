@@ -25,26 +25,56 @@
     <!-- Intro -->
     <div class="glass-wrapper">
 
-        <section id="random" class="initial-hidden">
-            <h1>Hidden Section</h1>
+        <section id="random" class="mirrored-section initial-hidden">
+            <div class="scroll-up scroll-up-end" onclick="scrollToSection('intro')" aria-label="Scroll up to intro section">
+                <p class="scroll-text">back to home</p>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <div class="content">
+                <p>1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sint consequuntur itaque
+                    reprehenderit molestiae quis fugit sequi quisquam iste necessitatibus incidunt temporibus nulla
+                    amet, cupiditate repellat magnam veritatis molestias eveniet.</p>
+                <p>2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sint consequuntur itaque
+                    reprehenderit molestiae quis fugit sequi quisquam iste necessitatibus incidunt temporibus nulla
+                    amet, cupiditate repellat magnam veritatis molestias eveniet.</p>
+            </div>
+            <h2>🎲 Random</h2>
         </section>
 
-        <section id="writings" class="initial-hidden">
-            <h1>Hidden Section</h1>
+        <hr class="sections-divider">
 
-            <div class="scroll-up" onclick="scrollToSectionAbove('experiences')" aria-label="Scroll up to experiences section">
+        <section id="experiences" class="mirrored-section initial-hidden">
+            <div class="scroll-up" onclick="scrollToSection('random')" aria-label="Scroll up to random section">
+                <i class="fas fa-chevron-up"></i>
+                <p class="scroll-text">ramdom</p>
+            </div>
+
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sint consequuntur itaque
+                    reprehenderit molestiae quis fugit sequi quisquam iste necessitatibus incidunt temporibus nulla
+                    amet, cupiditate repellat magnam veritatis molestias eveniet.</p>
+            </div>
+
+            <h2>🎓 Experiences</h2>
+        </section>
+
+        <hr class="sections-divider">
+
+        <section id="writings" class="mirrored-section initial-hidden">
+            <div class="scroll-up" onclick="scrollToSection('experiences')"
+                aria-label="Scroll up to experiences section">
                 <i class="fas fa-chevron-up"></i>
                 <p class="scroll-text">experiences</p>
             </div>
-        </section>
 
-        <section id="experiences" class="initial-hidden">
-            <h1>Hidden Section</h1>
-
-            <div class="scroll-up" onclick="scrollToSectionAbove('random')" aria-label="Scroll up to random section">
-                <i class="fas fa-chevron-up"></i>
-                <p class="scroll-text">random</p>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sint consequuntur itaque
+                    reprehenderit molestiae quis fugit sequi quisquam iste necessitatibus incidunt temporibus nulla
+                    amet, cupiditate repellat magnam veritatis molestias eveniet.</p>
             </div>
+
+            <h2>📝 Writings</h2>
         </section>
     </div>
 
@@ -53,7 +83,8 @@
 
         <div id="navigations-above">
             <!-- Scroll up Animation -->
-            <div class="scroll-up" onclick="scrollToSectionAbove('writings')" aria-label="Scroll up to writings section">
+            <div class="scroll-up-main" onclick="scrollToSection('writings')"
+                aria-label="Scroll up to writings section">
                 <i class="fas fa-chevron-up"></i>
                 <p class="scroll-text">writings</p>
             </div>
@@ -71,7 +102,8 @@
 
         <div id="navigations">
             <!-- Scroll Down Animation -->
-            <div class="scroll-down-main" onclick="scrollToSection('projects')" aria-label="Scroll down to projects section">
+            <div class="scroll-down-main" onclick="scrollToSection('projects')"
+                aria-label="Scroll down to projects section">
                 <p class="scroll-text">Projects</p>
                 <i class="fas fa-chevron-down"></i>
             </div>
@@ -310,6 +342,11 @@
                         class="fab fa-twitter-square"></i></a>
                 <a href="https://github.com/rajh-phuyal" target="_blank" aria-label="GitHub"><i
                         class="fab fa-github-square"></i></a>
+            </div>
+
+            <div class="scroll-down scroll-down-end" onclick="scrollToSection('intro')" aria-label="Scroll down to intro section">
+                <i class="fas fa-chevron-up" style="margin-left: 1.4em !important;"></i>
+                <p class="scroll-text">back to home</p>
             </div>
         </section>
     </div>
