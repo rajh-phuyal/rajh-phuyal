@@ -31,10 +31,20 @@
 
         <section id="writings" class="initial-hidden">
             <h1>Hidden Section</h1>
+
+            <div class="scroll-up" onclick="scrollToSectionAbove('experiences')" aria-label="Scroll up to experiences section">
+                <i class="fas fa-chevron-up"></i>
+                <p class="scroll-text">experiences</p>
+            </div>
         </section>
 
         <section id="experiences" class="initial-hidden">
             <h1>Hidden Section</h1>
+
+            <div class="scroll-up" onclick="scrollToSectionAbove('random')" aria-label="Scroll up to random section">
+                <i class="fas fa-chevron-up"></i>
+                <p class="scroll-text">random</p>
+            </div>
         </section>
     </div>
 
@@ -42,19 +52,12 @@
         <div class="rotating-earth"></div>
 
         <div id="navigations-above">
-            <!-- Scroll Down Animation -->
-            <div class="scroll-up" onclick="scrollToSectionAbove('random')" aria-label="Scroll up to random section">
-                <i class="fas fa-chevron-up"></i>
-                <p class="scroll-text">random</p>
-            </div>
+            <!-- Scroll up Animation -->
             <div class="scroll-up" onclick="scrollToSectionAbove('writings')" aria-label="Scroll up to writings section">
                 <i class="fas fa-chevron-up"></i>
                 <p class="scroll-text">writings</p>
             </div>
-            <div class="scroll-up" onclick="scrollToSectionAbove('experiences')" aria-label="Scroll up to experiences section">
-                <i class="fas fa-chevron-up"></i>
-                <p class="scroll-text">experiences</p>
-            </div>
+
         </div>
 
 
@@ -62,24 +65,14 @@
         <p>I'm a Full Stack Engineer and Computer Science student, <br>
             aspiring to architect systems and experiences.</p>
 
-        <div class="under-construction">
+        <!-- <div class="under-construction">
             🚧 Under Construction 🚧
-        </div>
+        </div> -->
 
         <div id="navigations">
             <!-- Scroll Down Animation -->
-            <div class="scroll-down" onclick="scrollToSection('projects')" aria-label="Scroll down to projects section">
+            <div class="scroll-down-main" onclick="scrollToSection('projects')" aria-label="Scroll down to projects section">
                 <p class="scroll-text">Projects</p>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-
-            <div class="scroll-down" onclick="scrollToSection('skills')" aria-label="Scroll down to skills section">
-                <p class="scroll-text">Skills</p>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-
-            <div class="scroll-down" onclick="scrollToSection('contact')" aria-label="Scroll down to contact section">
-                <p class="scroll-text">Contact</p>
                 <i class="fas fa-chevron-down"></i>
             </div>
         </div>
@@ -87,6 +80,29 @@
 
 
     <div class="glass-wrapper">
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2>🛠️ Current Projects</h2>
+
+            <div class="projects-container">
+                <div class="project">
+                    <h3>Transcendence (Final 42 Common Core Project)</h3>
+                    <p>Architecting and leading the development.</p>
+                </div>
+                <div class="project">
+                    <h3>Inception</h3>
+                    <p>Learning about Docker containers.</p>
+                </div>
+            </div>
+
+            <div class="scroll-down" onclick="scrollToSection('skills')" aria-label="Scroll down to skills section">
+                <p class="scroll-text">Skills</p>
+                <i class="fas fa-chevron-down" style="margin-left: 0.4em !important;"></i>
+            </div>
+        </section>
+
+        <hr class="sections-divider">
+
         <!-- Skills -->
         <section id="skills" class="skills-section">
             <h2 style="margin-bottom: 20px">⚙️ Skills</h2>
@@ -275,30 +291,17 @@
                     </div>
                 </div>
             </div>
-        </section>
 
-        <hr class="sections-divider">
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
-            <h2>🛠️ Current Projects</h2>
-
-            <div class="projects-container">
-                <div class="project">
-                    <h3>Transcendence (Final 42 Common Core Project)</h3>
-                    <p>Architecting and leading the development.</p>
-                </div>
-                <div class="project">
-                    <h3>Inception</h3>
-                    <p>Learning about Docker containers.</p>
-                </div>
+            <div class="scroll-down" onclick="scrollToSection('connect')" aria-label="Scroll down to connect section">
+                <p class="scroll-text">Connect</p>
+                <i class="fas fa-chevron-down" style="margin-left: 0.5em !important;"></i>
             </div>
         </section>
 
         <hr class="sections-divider">
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
+        <!-- connect Section -->
+        <section id="connect" class="connect-section">
             <h2>🤝 Connect</h2>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/rajh-phuyal/" target="_blank" aria-label="LinkedIn"><i
