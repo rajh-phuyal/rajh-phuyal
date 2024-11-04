@@ -20,7 +20,9 @@ body {
 }
 
 .visible {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 #random,
@@ -34,9 +36,6 @@ body {
     color: #fff;
     text-align: center;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     padding: 60px 20px 0px 20px;
 }
 

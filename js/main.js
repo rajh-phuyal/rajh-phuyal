@@ -8,13 +8,16 @@ function scrollToSection(sectionId) {
     }, 800);
 }
 
-$(window).on('load', function () {
-    // Remove the 'initial-hidden' class from sections once the page is fully loaded
-    $('#random, #writings, #experiences').removeClass('initial-hidden').addClass('visible')
-});
+function loadHiddenSections() {
+    $('#random, #writings, #experiences').removeClass('initial-hidden').addClass('visible');
+}
 
 
 $(document).ready(function () {
+    setTimeout(() => {
+        loadHiddenSections();
+    }, 1000);
+
     let $skillCards = $('.skill-card');
     let $body = $('body');
     let $skillModal = $('#skill-modal');
