@@ -2,13 +2,14 @@
 
 I'm a Full stack Engineer and Computer Science student.
 
+<!--"facts": [
+            "I like to play chess"
+        ]
+-->
 ```json
 {
     "info": {
-        "name": "Rajh Phuyal",
-        "facts": [
-            "I like to play chess"
-        ]
+        "name": "Rajh Phuyal"
     },
     "status": {
         "currentProjects": [
