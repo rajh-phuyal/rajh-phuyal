@@ -2,10 +2,6 @@
 
 I'm a Full stack Engineer and Computer Science student.
 
-<!--"facts": [
-            "I like to play chess"
-        ]
--->
 ```json
 {
     "info": {
@@ -18,8 +14,8 @@ I'm a Full stack Engineer and Computer Science student.
                 "description": "Architecting and leading the devlopment"
             },
             {
-                "name": "Inception",
-                "description": "Learning about docker containers"
+                "name": "Webserv",
+                "description": "Creating a nginx clone in C++"
             }
         ]
     }
