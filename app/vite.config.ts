@@ -4,10 +4,11 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  // Use relative base so it works when served from /docs on GitHub Pages
+  base: './',
   build: {
-    outDir: '../',
-    emptyOutDir: false,
+    outDir: '../docs',
+    emptyOutDir: true,
     assetsDir: 'assets',
   },
 })
