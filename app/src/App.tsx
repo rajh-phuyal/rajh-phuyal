@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react'
 import './App.css'
  
-type PanelCell = { row: number; col: number; title: string; color: string }
+type PanelCell = { row: number; col: number; gRow: number; gCol: number; title: string; color: string }
 
 function App() {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const hasScrolledToOriginRef = useRef(false)
+  const isRebasingRef = useRef(false)
 
   // Fixed 5x5 grid centered at (0,0): rows/cols in [-2, 2]
   const minRow = -2
@@ -14,6 +15,16 @@ function App() {
   const maxCol = 2
   const rowsCount = maxRow - minRow + 1 // 5
   const colsCount = maxCol - minCol + 1 // 5
+  const renderedRows = rowsCount + 2 // add ghost ring top/bottom
+  const renderedCols = colsCount + 2 // add ghost ring left/right
+
+  const wrapCoord = useCallback((value: number, min: number, max: number) => {
+    const range = max - min + 1
+    let v = value
+    while (v < min) v += range
+    while (v > max) v -= range
+    return v
+  }, [])
 
   const computeViewportSize = useCallback(() => {
     const el = containerRef.current
@@ -68,48 +79,88 @@ function App() {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [computeViewportSize, scrollToCell])
 
-  // Initial scroll to origin (0,0) in the grid
+  // Initial scroll to origin (0,0) in the grid (into the center of ghost ring)
   useEffect(() => {
     const el = containerRef.current
     if (!el || hasScrolledToOriginRef.current) return
     hasScrolledToOriginRef.current = true
     // Use instant to avoid animation on initial mount
-    scrollToCell(0, 0, 'instant' as ScrollBehavior)
+    const { vw, vh } = computeViewportSize()
+    const centerRowIndex = (0 - minRow) + 1 // real index + ghost offset
+    const centerColIndex = (0 - minCol) + 1 // real index + ghost offset
+    el.scrollTo({ left: centerColIndex * vw, top: centerRowIndex * vh, behavior: 'instant' as ScrollBehavior })
   }, [scrollToCell])
 
-  // No dynamic expansion; fixed grid
+  // Seamless wrap (cylinder): rebase vertically from ghost edges to opposite real edges
+  const handleScroll = useCallback(() => {
+    const el = containerRef.current
+    if (!el || isRebasingRef.current) return
+
+    const { vw, vh } = computeViewportSize()
+    const rowIndex = Math.round(el.scrollTop / vh)
+    const colIndex = Math.round(el.scrollLeft / vw)
+
+    const topGhost = 0
+    const bottomGhost = renderedRows - 1 // 6
+    const firstReal = 1
+    const lastReal = renderedRows - 2 // 5
+
+    let targetRowIndex = rowIndex
+    let shouldRebase = false
+
+    if (rowIndex === topGhost) {
+      targetRowIndex = lastReal
+      shouldRebase = true
+    } else if (rowIndex === bottomGhost) {
+      targetRowIndex = firstReal
+      shouldRebase = true
+    }
+
+    if (shouldRebase) {
+      isRebasingRef.current = true
+      el.scrollTo({ left: colIndex * vw, top: targetRowIndex * vh, behavior: 'instant' as ScrollBehavior })
+      // allow the scroll position to settle before unlocking
+      requestAnimationFrame(() => { isRebasingRef.current = false })
+    }
+  }, [computeViewportSize, renderedCols, renderedRows])
 
   const panels: PanelCell[] = useMemo(() => {
     const list: PanelCell[] = []
-    const total = (maxRow - minRow + 1) * (maxCol - minCol + 1)
-    for (let r = minRow; r <= maxRow; r += 1) {
-      for (let c = minCol; c <= maxCol; c += 1) {
-        const index = (r - minRow) * (maxCol - minCol + 1) + (c - minCol)
+    const total = rowsCount * colsCount
+    for (let r = minRow - 1; r <= maxRow + 1; r += 1) {
+      for (let c = minCol - 1; c <= maxCol + 1; c += 1) {
+        const gRow = r - (minRow - 1)
+        const gCol = c - (minCol - 1)
+        const index = gRow * (colsCount + 2) + gCol
+        const wr = wrapCoord(r, minRow, maxRow)
+        const wc = wrapCoord(c, minCol, maxCol)
         const hue = Math.round((index / Math.max(total, 1)) * 360)
         list.push({
-          row: r,
-          col: c,
-          title: `Panel ${r}-${c}`,
+          row: wr,
+          col: wc,
+          gRow,
+          gCol,
+          title: `Panel ${wr}-${wc}`,
           color: `hsl(${hue} 70% 45%)`,
         })
       }
     }
     return list
-  }, [maxCol, maxRow, minCol, minRow])
+  }, [colsCount, maxCol, maxRow, minCol, minRow, rowsCount, wrapCoord])
 
   return (
     <div className="viewportContainer">
-      <div className="gridScroll" ref={containerRef}>
+      <div className="gridScroll" ref={containerRef} onScroll={handleScroll}>
         <div
           className="grid"
           style={{
-            gridTemplateColumns: `repeat(${colsCount}, 100vw)`,
-            gridTemplateRows: `repeat(${rowsCount}, 100vh)`,
+            gridTemplateColumns: `repeat(${renderedCols}, 100vw)`,
+            gridTemplateRows: `repeat(${renderedRows}, 100vh)`,
           }}
         >
           {panels.map((p) => (
             <section
-              key={`${p.row}:${p.col}`}
+              key={`g${p.gRow}:${p.gCol}-r${p.row}:${p.col}`}
               className="panel"
               style={{ background: p.color }}
             >
