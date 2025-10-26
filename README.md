@@ -6,30 +6,18 @@ I'm a Full stack Engineer and Computer Science student.
 {
     "info": {
         "name": "Rajh Phuyal"
-    },
-    "status": {
-        "currentProjects": [
-            {
-                "name": "Transcendence (final 42 Common Core final project)",
-                "description": "Architecting and leading the devlopment"
-            },
-            {
-                "name": "Webserv",
-                "description": "Creating a nginx clone in C++"
-            }
-        ]
     }
 }
 ```
 
-<details>
+<!-- <details>
   <summary>Uhhh, what?</summary>
 
   - 👨‍💻 **Current Projects**: I’m currently leading the final project of 42 Common Core, which involves full stack development.
   - 📚 **Learning**: Right now, I'm learning about Docker containers.
   - ⚡ **Fun Fact**: I like to play chess
 
-</details>
+</details> -->
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="25"> Skills
 
