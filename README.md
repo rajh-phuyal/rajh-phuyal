@@ -1,7 +1,13 @@
 ## 👋 Hello, World!
 
 
-I'm a Full stack Engineer and Computer Science student.
+<div align="center" class="icons-social">
+    I'm an Engineer and a student forever.
+</div>
+<div align="center" class="icons-social">
+    <a target="_blank" href="https://www.linkedin.com/in/rajh-phuyal/">[linkdin]</a>
+    <a target="_blank" href="https://x.com/rajh_phuyal">[X (twitter)]</a>
+</div>
 
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="25"> Skills & Tools
@@ -42,15 +48,6 @@ I'm a Full stack Engineer and Computer Science student.
   ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white) &nbsp;
 
 </p>
-
-
-
-##
-
-<div align="center" class="icons-social">
-    <a target="_blank" href="https://www.linkedin.com/in/rajh-phuyal/">[linkdin]</a>
-    <a target="_blank" href="https://x.com/rajh_phuyal">[X (twitter)]</a>
-</div>
 
 ##
 
