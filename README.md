@@ -2,11 +2,13 @@
 
 
 <div align="center" class="icons-social">
-    I'm an Engineer and a student forever.
+    <h3 style="font-size:60px;margin:47px 50px 0px;">I'm an Engineer and a student forever.</h3>
 </div>
+
 <div align="center" class="icons-social">
     <a target="_blank" href="https://www.linkedin.com/in/rajh-phuyal/">[linkdin]</a>
-    <a target="_blank" href="https://x.com/rajh_phuyal">[X (twitter)]</a>
+    <a target="_blank" href="https://x.com/rajh_phuyal">[x.com]</a>
+    <a target="_blank" href="https://www.linkedin.com/in/rajh-phuyal/">[website]</a>
 </div>
 
 
