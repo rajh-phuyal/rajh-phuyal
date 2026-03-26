@@ -7,7 +7,7 @@
 
 <div align="center" class="icons-social">
     <a target="_blank" href="https://www.linkedin.com/in/rajh-phuyal/">[linkdin]</a>
-    <a target="_blank" href="https://x.com/rajh_phuyal">[x.com]</a>
+    <a target="_blank" href="https://x.com/rajhphuyal">[x.com]</a>
     <a target="_blank" href="https://rajhphuyal.com/">[website]</a>
 </div>
 
